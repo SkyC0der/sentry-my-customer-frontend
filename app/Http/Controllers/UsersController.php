@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
+use Illuminate\Pagination\LengthAwarePaginator as Paginator; // NAMESPACE FOR PAGINATOR
 
 class UsersController extends Controller
 {
@@ -14,7 +15,7 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index( Request $request )
     {
         //
         try {
@@ -24,7 +25,14 @@ class UsersController extends Controller
             if ($statusCode == 200) {
                 $body = $response->getBody()->getContents();
                 $users = json_decode($body);
-                return view('backend.users_list.index')->with('response', $users);
+
+                $perPage = 10;   
+                $page = $request->get('page', 1);
+                if ($page > count($users) or $page < 1) { $page = 1; }
+                $offset = ($page * $perPage) - $perPage; 
+                $articles = array_slice($users,$offset,$perPage);
+                $datas = new Paginator($articles, count($users), $perPage);
+                return view('backend.users_list.index')->with('response', $datas->withPath('/backend/users'));
             }
 
             if ($statusCode == 500) {
