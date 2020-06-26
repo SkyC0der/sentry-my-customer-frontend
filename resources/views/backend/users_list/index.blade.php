@@ -3,7 +3,7 @@
 @section("custom_css")
 <link href="/backend/assets/build/css/intlTelInput.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
-        <link rel="stylesheet" href="backend/assets/css/all_users.css">
+        <link rel="stylesheet" href="/backend/assets/build/css/all_users.css">
 @stop
         @section('content')
                 <div class="content">
@@ -99,7 +99,56 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
+                                     @isset($response)
+                                           @for ($i = 0; $i < count($response); $i++)
+                                        <tr>
+                                        <th>{{$i + 1 }}</th>
+                                                    <td>{{$response[$i]->first_name}}<br> <span>{{$response[$i]->_id}}</span> 
+        
+                                                        @if ($response[$i]->user_role == "store_admin")
+                                                            <span class="badge badge-primary">owner</span> 
+                                                        @elseif ($response[$i]->user_role == "store_assistant")
+                                                            <span class="badge badge-secondray">assistant</span>
+                                                        @else
+                                                             <span class="badge badge-info">No role</span>
+                                                        @endif
+                                                        @if($response[$i]->is_active)
+                                                        <span class="badge badge-success">Activated</span> 
+                                                         </td>
+                                                         @else
+                                                          <span class="badge badge-secondary">Not activated</span>
+                                                        </td>
+                                                        @endif
+                                                    <td>
+                                                       @if(isset($response[$i]->store_address))
+                                                       {{$response[$i]->store_address}} <br>
+                                                       @else
+                                                        Store Location Address would be here <br>
+                                                       @endif                                                    
+                                                    <span class="badge badge-primary">Store Reference Code: 
+                                                        @if(isset($response[$i]->store_ref_code))
+                                                       {{$response[$i]->store_ref_code}} <br>
+                                                       @else
+                                                        ST145M455 <br>
+                                                       @endif
+                                                        
+                                                    </span>
+                                                 </td>
+                                                    <td><div class="btn-group mt-2 mr-1">
+                                            <button type="button" class="btn btn-info dropdown-toggle"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Actions<i class="icon"><span data-feather="chevron-down"></span></i>
+                                            </button>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                            <a class="dropdown-item" href="/backend/users/{{$i}}">View Profile</a>
+                                                <a class="dropdown-item" href="#">Active</a>
+                                                <a class="dropdown-item" href="#">Deactivate</a>
+                                                </div>
+                                                </div></td>
+                                                </tr>
+                                            @endfor
+                                       @endisset
+                                                {{-- <tr>
                                                     <th scope="row">1</th>
                                                     <td>John Doe <br> <span>SO123aM123</span> <span class="badge badge-primary">Store Owner</span> <span class="badge badge-secondary">assistant</span> <span class="badge badge-success">Activated</span> </td>
                                                     <td>Store Location Address would be here <br> <span class="badge badge-primary">Store Reference Code: ST145M455</span> </td>
@@ -114,8 +163,7 @@
                                                 <a class="dropdown-item" href="#">Deactivate</a>
                                             </div>
                                         </div></td>
-                                                </tr>
-
+                                                </tr> --}}
                                             </tbody>
                                         </table>
                                     </div>
@@ -140,21 +188,36 @@
                                                 <div class="modal-body">
                                                       <form class="form-horizontal">
                                             <div class="form-group row mb-3">
-                                                <label for="inputphone" class="col-3 col-form-label">Phone Number</label>
+                                                <label for="first_name" class="col-3 col-form-label">First Name</label>
                                                 <div class="col-9">
-                                                    <input type="number" class="form-control" id="inputphone" placeholder="Phone Number">
+                                                     <input type="text" id="first_name" name="first_name" class="form-control" required>
                                                 </div>
                                             </div>
                                             <div class="form-group row mb-3">
-                                                <label for="inputPassword3" class="col-3 col-form-label">Password</label>
+                                                <label for="last_name" class="col-3 col-form-label">Last Name</label>
                                                 <div class="col-9">
-                                                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                                                     <input type="text" id="last_name" name="last_name" class="form-control" required>
                                                 </div>
                                             </div>
                                             <div class="form-group row mb-3">
-                                                <label for="inputPassword5" class="col-3 col-form-label">Re Password</label>
+                                                <label for="email" class="col-3 col-form-label">Email</label>
                                                 <div class="col-9">
-                                                    <input type="password" class="form-control" id="inputPassword5" placeholder="Retype Password">
+                                                     <input type="email" id="email" name="email" class="form-control" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row mb-3">
+                                                <label for="password" class="col-3 col-form-label">Password</label>
+                                                <div class="col-9">
+                                                    <input type="password" class="form-control" id="password" >
+                                                </div>
+                                            </div>
+                                                <div class="form-group row mb-3">
+                                                <label for="phone" class="col-3 col-form-label">Phone Number</label>
+                                                <div class="col-9">
+                                                    <div class="input-group-prepend">
+
+                                                    </div>
+                                                    <input type="tel" id="phones" name="phone_number" class="form-control" required>
                                                 </div>
                                             </div>
                                             <div class="form-group mb-0 justify-content-end row">
@@ -177,8 +240,16 @@
 <script src="/backend/assets/build/js/intlTelInput.js"></script>
 <script>
 var input = document.querySelector("#phone");
+    
 window.intlTelInput(input, {
     // any initialisation options go here
 });
+
+$('#myModal').on('shown.bs.modal', function () {
+    var inputs = document.querySelector("#phones");
+    window.intlTelInput(inputs, {
+    // any initialisation options go here
+});
+})
 </script>
     @stop

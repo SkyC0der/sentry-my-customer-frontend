@@ -28,22 +28,26 @@
                                         <p class="text-muted mt-1 mb-4">Enter your phone number and password to
                                             access admin panel.</p>
 
-                                        <form action="#" class="authentication-form">
+                                            @if(Session::has('message') || $errors->any())
+                                            <p class="alert {{ Session::get('alert-class', 'alert-danger') }}">{{ Session::get('message') }}</p>
+                                            @endif
+
+                                        <form action="{{ route('login.authenticate') }}" class="authentication-form" method="POST">
+                                            @csrf
                                             <div class="form-group">
                                                 <label class="form-control-label">Phone Number</label>
                                                 <div class="input-group input-group-merge">
                                                     <div class="input-group-prepend">
 
                                                     </div>
-                                                    <input type="tel" id="phone" class="form-control">
-
+                                                    <input type="tel" id="phone" name="phone_number" class="form-control" required>
 
                                                 </div>
                                             </div>
 
                                             <div class="form-group mt-4">
                                                 <label class="form-control-label">Password</label>
-                                                <a href="/recoverPassword"
+                                            <a href="{{ url('/backend/recoverPassword') }}"
                                                     class="float-right text-muted text-unline-dashed ml-1">Forgot your
                                                     password?</a>
                                                 <div class="input-group input-group-merge">
@@ -52,8 +56,8 @@
                                                             <i class="icon-dual" data-feather="lock"></i>
                                                         </span>
                                                     </div>
-                                                    <input type="password" class="form-control" id="password"
-                                                        placeholder="Enter your password">
+                                                    <input type="password" name="password" class="form-control" id="password"
+                                                        placeholder="Enter your password" required>
                                                 </div>
                                             </div>
 
