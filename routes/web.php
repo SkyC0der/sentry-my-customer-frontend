@@ -53,7 +53,7 @@ Route::group(['prefix' => '/admin',  'middleware' => 'backend.auth'], function (
     Route::get('/activate', 'ActivateController@index')->name('activate.user');
 
 Route::get('backend/activate', 'ActivateController@index')->name('activate.user');
-
+});
 
 // dashboard
 Route::get('/backend/dashboard', function () {
@@ -109,11 +109,11 @@ Route::get('/backend/settings', function () {
     return view('backend.settings.settings');
 })->name('settings');
 
+
 // stores
 Route::get('/backend/stores', function () {
   return view('backend.stores.store_list');
 });
-
 
 Route::get('/backend/view_store', function () {
     return view('backend.stores.show');
@@ -128,5 +128,4 @@ Route::get('/backend/edit_store', function () {
 // });
 
 Route::get('/backend/settings', 'SettingsController@index');
-
 Route::post('/backend/settings', 'SettingsController@update')->name('settings');
