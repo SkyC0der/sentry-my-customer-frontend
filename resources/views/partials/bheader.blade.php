@@ -7,7 +7,7 @@
                 <img src="{{ ('/frontend/assets/images/fulllogo.png') }}" alt="" height="48" />
             </span>
             <span class="logo-sm">
-                <img src="assets/images/logos.png" alt="" height="24">
+                <img src="/backend/assets/images/logo.png" alt="" height="24">
             </span>
         </a>
 
@@ -40,25 +40,25 @@
                 <div class="dropdown-menu dropdown-menu-right">
                     <!-- item-->
                     <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <img src="assets/images/flags/germany.jpg" alt="user-image" class="mr-2" height="12">
+                        <img src="/backend/assets/images/flags/germany.jpg" alt="user-image" class="mr-2" height="12">
                         <span class="align-middle">German</span>
                     </a>
 
                     <!-- item-->
                     <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <img src="assets/images/flags/italy.jpg" alt="user-image" class="mr-2" height="12">
+                        <img src="/backend/assets/images/flags/italy.jpg" alt="user-image" class="mr-2" height="12">
                         <span class="align-middle">Italian</span>
                     </a>
 
                     <!-- item-->
                     <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <img src="assets/images/flags/spain.jpg" alt="user-image" class="mr-2" height="12">
+                        <img src="/backend/assets/images/flags/spain.jpg" alt="user-image" class="mr-2" height="12">
                         <span class="align-middle">Spanish</span>
                     </a>
 
                     <!-- item-->
                     <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <img src="assets/images/flags/russia.jpg" alt="user-image" class="mr-2" height="12">
+                        <img src="/backend/assets/images/flags/russia.jpg" alt="user-image" class="mr-2" height="12">
                         <span class="align-middle">Russian</span>
                     </a>
                 </div>
@@ -98,7 +98,7 @@
                         <!-- item-->
                         <a href="javascript:void(0);" class="dropdown-item notify-item border-bottom">
                             <div class="notify-icon">
-                                <img src="assets/images/users/avatar-1.jpg" class="img-fluid rounded-circle" alt="" />
+                                <img src="/backend/assets/images/users/avatar-1.jpg" class="img-fluid rounded-circle" alt="" />
                             </div>
                             <p class="notify-details">Karen Robinson</p>
                             <p class="text-muted mb-0 user-msg">
@@ -109,7 +109,7 @@
                         <!-- item-->
                         <a href="javascript:void(0);" class="dropdown-item notify-item border-bottom">
                             <div class="notify-icon">
-                                <img src="assets/images/users/avatar-2.jpg" class="img-fluid rounded-circle" alt="" />
+                                <img src="/backend/assets/images/users/avatar-2.jpg" class="img-fluid rounded-circle" alt="" />
                             </div>
                             <p class="notify-details">Cristina Pride</p>
                             <p class="text-muted mb-0 user-msg">
@@ -164,7 +164,7 @@
                 <a class="nav-link dropdown-toggle nav-user mr-0" data-toggle="dropdown" href="#" role="button"
                     aria-haspopup="false" aria-expanded="false">
                     <div class="media user-profile ">
-                        <img src="assets/images/users/avatar-7.jpg" alt="user-image"
+                        <img src="/backend/assets/images/users/avatar-7.jpg" alt="user-image"
                             class="rounded-circle align-self-center" />
                         <div class="media-body text-left">
                             <h6 class="pro-user-name ml-2 my-0">

@@ -58,7 +58,7 @@
 ============================================ -->
 
    <!-- Vendor js -->
-   <script src="assets/js/vendor.min.js"></script>
+   <script src="/backend/assets/js/vendor.min.js"></script>
 
    <!-- optional plugins -->
    <script src="/backend/assets/libs/moment/moment.min.js"></script>

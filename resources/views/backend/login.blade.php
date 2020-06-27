@@ -47,7 +47,7 @@
 
                                             <div class="form-group mt-4">
                                                 <label class="form-control-label">Password</label>
-                                            <a href="{{ url('/backend/recoverPassword') }}"
+                                            <a href="{{ url('/admin/recoverPassword') }}"
                                                     class="float-right text-muted text-unline-dashed ml-1">Forgot your
                                                     password?</a>
                                                 <div class="input-group input-group-merge">
@@ -96,7 +96,7 @@
 
                         <div class="row mt-3">
                             <div class="col-12 text-center">
-                                <p class="text-muted">Dont have an account <a href="/backend/register"
+                                <p class="text-muted">Dont have an account <a href="/admin/register"
                                         class="text-primary font-weight-bold ml-1">Sign Up</a></p>
                             </div> <!-- end col -->
                         </div>

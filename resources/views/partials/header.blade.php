@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div class="nav__button__container">
-                <button class="nav__button "><a href="/backend/login" class="nav__button__link">Log In</a></button>
+                <button class="nav__button "><a href="/admin/login" class="nav__button__link">Log In</a></button>
                 <button class="nav__button btn-nav-active"><a href="/backend/register"
                         class="nav__button__link__active">Sign
                         Up</a></button>

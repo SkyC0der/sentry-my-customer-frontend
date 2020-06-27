@@ -12,7 +12,7 @@
                     <div class="row page-title">
                         <div class="col-md-12">
                             <nav aria-label="breadcrumb" class="float-right mt-1">
-                                <a href="/backend/users" class="btn btn-primary">Go Back</a>
+                                <a href="/admin/users" class="btn btn-primary">Go Back</a>
                                 {{-- <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="#">Shreyu</a></li>
                                     <li class="breadcrumb-item"><a href="#">Pages</a></li>
@@ -127,7 +127,7 @@
                                         <td>C1290D</td>
                                         <td>$500.00</td>
                                         <td>25th July, 2020</td>
-                                        <td><a href="/backend/view_transaction"><i data-feather="eye"></i></a></td>
+                                        <td><a href="/admin/view_transaction"><i data-feather="eye"></i></a></td>
                                     </tr>
                                     <tr>
                                         <td>GI671B</td>
@@ -135,7 +135,7 @@
                                         <td>C12ADS</td>
                                         <td>$500.00</td>
                                         <td>25th July, 2020</td>
-                                        <td><a href="/backend/view_transaction"><i data-feather="eye"></i></a></td>
+                                        <td><a href="/admin/view_transaction"><i data-feather="eye"></i></a></td>
                                     </tr>
                                     <tr>
                                         <td>GI671B</td>
@@ -143,7 +143,7 @@
                                         <td>C1D90F</td>
                                         <td>$500.00</td>
                                         <td>25th July, 2020</td>
-                                        <td><a href="/backend/view_transaction"><i data-feather="eye"></i></a></td>
+                                        <td><a href="/admin/view_transaction"><i data-feather="eye"></i></a></td>
                                     </tr>
 
                                     <tr>
@@ -152,7 +152,7 @@
                                         <td>C1294E</td>
                                         <td>$500.00</td>
                                         <td>25th July, 2020</td>
-                                        <td><a href="/backend/view_transaction"><i data-feather="eye"></i></a></td>
+                                        <td><a href="/admin/view_transaction"><i data-feather="eye"></i></a></td>
                                     </tr>
 
                                     <tr>
@@ -161,7 +161,7 @@
                                         <td>C1290D</td>
                                         <td>$500.00</td>
                                         <td>25th July, 2020</td>
-                                        <td><a href="/backend/view_transaction"><i data-feather="eye"></i></a></td>
+                                        <td><a href="/admin/view_transaction"><i data-feather="eye"></i></a></td>
                                     </tr>
 
                                     <tr>
@@ -170,7 +170,7 @@
                                         <td>C1290D</td>
                                         <td>$500.00</td>
                                         <td>25th July, 2020</td>
-                                        <td><a href="/backend/view_transaction"><i data-feather="eye"></i></a></td>
+                                        <td><a href="/admin/view_transaction"><i data-feather="eye"></i></a></td>
                                     </tr>
 
                                 </tbody>

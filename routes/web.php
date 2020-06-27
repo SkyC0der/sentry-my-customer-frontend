@@ -29,25 +29,28 @@ Route::get('/faq', function () {
     return view('faq');
 });
 
-
+Route::get('admin', function() {
+    return redirect('/admin/dashboard');
+});
 
 // backend codes
 
-Route::prefix('/backend/login')->group(function () {
-    Route::get('/', ['uses' => "Auth\LoginController@index"])->name('login');
-    Route::post('/authenticate', ['uses' => "Auth\LoginController@authenticate"])->name('login.authenticate');
-});
+Route::prefix('/admin')->group(function () {
+    Route::get('/login', ['uses' => "Auth\LoginController@index"])->name('login');
+    Route::post('/login/authenticate', ['uses' => "Auth\LoginController@authenticate"])->name('login.authenticate');
 
 Route::get('/backend/register', function () {
     return view('backend.register.signup');
 });
 
-Route::post('/backend/register', 'RegisterController@register')->name('register');
+    Route::get('/register', 'Auth\RegisterController@index');
 
-Route::get('/backend/recoverPassword', function () {
-    return view('backend.recoverPassword.recoverPassword');
+    Route::post('/register', 'Auth\RegisterController@register')->name('register');
 });
 
+// Protected Routes
+Route::group(['prefix' => '/admin',  'middleware' => 'backend.auth'], function () {
+    Route::get('/activate', 'ActivateController@index')->name('activate.user');
 
 Route::get('backend/activate', 'ActivateController@index')->name('activate.user');
 
@@ -127,4 +130,3 @@ Route::get('/backend/edit_store', function () {
 Route::get('/backend/settings', 'SettingsController@index');
 
 Route::post('/backend/settings', 'SettingsController@update')->name('settings');
-

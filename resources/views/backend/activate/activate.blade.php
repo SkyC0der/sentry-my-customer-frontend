@@ -36,7 +36,7 @@
                                             <div class="alert alert-success alert-dismissible" id="success"
                                                  style="display: none">
                                                 <span id="success-message">Your account has been activated.
-                                                    <a href="{{url('/backend/dashboard')}}">Click Here if you were not redirected</a>
+                                                    <a href="{{url('/admin/dashboard')}}">Click Here if you were not redirected</a>
                                                 </span>
 
                                             </div>
@@ -127,9 +127,9 @@
                     //success
                     $(this).show();
                     verifying.hide();
-                    success_message.html('Your account has been activated.<br/>' + '<a href="{{url('/backend/dashboard')}}">Click Here if you were not redirected</a>');
+                    success_message.html('Your account has been activated.<br/>' + '<a href="{{url('/admin/dashboard')}}">Click Here if you were not redirected</a>');
                     success.show();
-                    window.location = "{{url('/backend/dashboard')}}";
+                    window.location = "{{url('/admin/dashboard')}}";
                 }).fail((e) => {
                     e = JSON.parse(e.responseText);
                     error_message.text(e.message.errors[0].description);
