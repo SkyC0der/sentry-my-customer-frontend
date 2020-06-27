@@ -42,30 +42,7 @@
                             </div>
                           </div>
                         </div>
-
-                      {{-- <div class="form-group col-lg-4 mt-4">
-                          <label class="form-control-label">Business Name</label>
-                          <div class="input-group input-group-merge">
-                              <div class="input-group-prepend">
-                                  <span class="input-group-text">
-                                      <i class="icon-dual" data-feather="lock"></i>
-                                  </span>
-                              </div>
-                              <input type="text" class="form-control" id="password" >
-                          </div>
-                      </div> --}}
-
-                      {{-- <div class="form-group col-lg-4 mt-4">
-                        <label class="form-control-label">Phone Number</label>
-                        <div class="input-group input-group-merge">
-                            <div class="input-group-prepend">
-
-                            </div>
-                            <input type="tel" id="phone" class="form-control">
-                        </div>
-                      </div>
-                      <button type="button" class="btn btn-primary">Search</button> --}}
-                    </div>
+                       </div>
 
 
                   </div>
@@ -106,7 +83,7 @@
                                       Actions<i class="icon"><span data-feather="chevron-down"></span></i>
                                     </button>
                                     <div class="dropdown-menu dropdown-menu-right">
-                                      <a class="dropdown-item" href="/backend/view_user">View Store</a>
+                                      <a class="dropdown-item" href="/backend/view_store">View Store</a>
                                       <a class="dropdown-item" href="#">Edit store</a>
                                       <a class="dropdown-item" href="#">Delete store</a>
                                     </div>
@@ -125,7 +102,7 @@
                                       Actions<i class="icon"><span data-feather="chevron-down"></span></i>
                                     </button>
                                     <div class="dropdown-menu dropdown-menu-right">
-                                      <a class="dropdown-item" href="/backend/view_user">View Store</a>
+                                      <a class="dropdown-item" href="/backend/view_store">View Store</a>
                                       <a class="dropdown-item" href="#">Edit store</a>
                                       <a class="dropdown-item" href="#">Delete store</a>
                                     </div>
@@ -147,7 +124,7 @@
                       <div class="modal-dialog">
                           <div class="modal-content">
                               <div class="modal-header">
-                                  <h5 class="modal-title" id="myModalLabel">Create New User</h5>
+                                  <h5 class="modal-title" id="myModalLabel">Create New Store</h5>
                                   <button type="button" class="close" data-dismiss="modal"
                                       aria-label="Close">
                                       <span aria-hidden="true">&times;</span>
@@ -175,17 +152,16 @@
                           </div>
                           <div class="form-group mb-0 justify-content-end row">
                               <div class="col-9">
-                                  <button type="submit" class="btn btn-primary btn-block ">Create User</button>
+                                  <button type="submit" class="btn btn-primary btn-block ">Create Store</button>
                               </div>
                           </div>
                       </form>
                               </div>
-                                                                              <div class="modal-footer">
+                              <div class="modal-footer">
                               </div>
-
-                          </div><!-- /.modal-content -->
-                      </div><!-- /.modal-dialog -->
-                  </div><!-- /.modal -->
+                          </div>
+                      </div>
+                  </div>
 @endsection
 
 @section("javascript")
