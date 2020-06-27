@@ -79,6 +79,10 @@ h1,h2,h3,h4,h5,h6 {
   .welcome-content h3 {
     text-align: center;
   }
+
+  body > header > nav > div.container.nav > div.nav__brand > a > img {
+    max-width: 60%;
+  }
 }
 
 @media (max-width: 570px) {

@@ -100,6 +100,7 @@
                                             </thead>
                                             <tbody>
                                      @isset($response)
+                                        @if(count($response) > 0)
                                            @for ($i = 0; $i < count($response); $i++)
                                         <tr>
                                         <th>{{$i + 1 }}</th>
@@ -140,13 +141,14 @@
                                                 Actions<i class="icon"><span data-feather="chevron-down"></span></i>
                                             </button>
                                             <div class="dropdown-menu dropdown-menu-right">
-                                            <a class="dropdown-item" href="/backend/users/{{$i}}">View Profile</a>
+                                            <a class="dropdown-item" href="/admin/users/{{$i}}">View Profile</a>
                                                 <a class="dropdown-item" href="#">Active</a>
                                                 <a class="dropdown-item" href="#">Deactivate</a>
                                                 </div>
                                                 </div></td>
                                                 </tr>
                                             @endfor
+                                            @endif
                                        @endisset
                                                 {{-- <tr>
                                                     <th scope="row">1</th>
@@ -158,7 +160,7 @@
                                                 Actions<i class="icon"><span data-feather="chevron-down"></span></i>
                                             </button>
                                             <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="/backend/view_user">View Profile</a>
+                                                <a class="dropdown-item" href="/admin/view_user">View Profile</a>
                                                 <a class="dropdown-item" href="#">Active</a>
                                                 <a class="dropdown-item" href="#">Deactivate</a>
                                             </div>
@@ -171,7 +173,7 @@
                                 </div> <!-- end card -->
                             </div><!-- end col-->
                         </div>
-
+                        {{$response->links()}}
                     </div>
                 </div>
                                             <div id="myModal" class="modal fade" tabindex="-1" role="dialog"
