@@ -59,7 +59,9 @@
                                             <input type="text" class="form-control" id="inputZip" >
                                           </div>
                                         </div>
-                                        <a href="#" class=" btn btn-success">Update Store</a>
+                                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+                                            Update Changes
+                                        </button>
                                       </form>
                                 </div>
                              </div>
@@ -70,7 +72,27 @@
 
             </div>
         </div>
-   @endsection
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  Do you want to save these changes to your store profile?
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-success"><a href="/backend/view_store" class="text-white">Save changes</a></button>
+                </div>
+              </div>
+            </div>
+          </div>
+@endsection
 
 @section("javascript")
    <script src="/backend/assets/build/js/intlTelInput.js"></script>
